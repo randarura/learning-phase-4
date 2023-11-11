@@ -3,6 +3,7 @@
 Download and install the application on your PC!
 
 ## Visual Studio Code
+
 https://code.visualstudio.com/
 
 Download `Visual Studio Code` for your platform
@@ -11,20 +12,24 @@ Download `Visual Studio Code` for your platform
 ![Visual Studio Code](./docs/images/2.png)
 
 ## Node.js
+
 https://nodejs.org/en
 
 Download `20.9.0 LTS` for your platform
 ![Node.js](./docs/images/4.png)
 
 ### Confirmation that installation is complete
+
 Launch `Visual Studio Code`
 Open terminal
 ![Visual Studio Code](./docs/images/3.png)
 Type `node -v` in the terminal
 If you see "v20.9.0", it is OK.
+
 ```
 node -v
 ```
+
 ![Node.js](./docs/images/5.png)
 
 # Next.js ReadMe

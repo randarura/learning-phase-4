@@ -6,9 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint:eslint": "next lint",
-    "lint:prettier": "prettier . --check",
-    "format:": "npm run lint:prettier -- --write"
+    "lint": "next lint",
+    "format": "prettier . --write"
   },
   "dependencies": {
     "next": "14.0.2",
