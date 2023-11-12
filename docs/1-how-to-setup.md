@@ -20,7 +20,7 @@ Download `20.9.0 LTS` for your platform:
 
 ### Confirmation that installation is complete
 
-Launch `Visual Studio Code`
+Launch `Visual Studio Code`  
 Open terminal:
 ![Visual Studio Code](./images/1/3.png)
 Type `node -v` in the terminal
@@ -36,7 +36,7 @@ If you see "v20.9.0", it is OK.
 
 [https://git-scm.com/](https://git-scm.com/)
 
-Download `Git` for your platform:
+Download `Git` for your platform:  
 For Mac user - git is already installed
 ![Visual Studio Code](./images/1/8.png)
 
@@ -83,3 +83,24 @@ https://vercel.com/guides/nextjs-prisma-postgres#step-2-set-up-your-vercel-postg
 
 どこかでVS Codeの拡張を入れるのもやっておきたい
 extensions.json に指定しているもの
+
+```
+❯ vercel link
+Vercel CLI 32.5.3
+? Set up “~/Study/learning-phase-4”? [Y/n] y
+? Which scope should contain your project? total-pbc
+? Found project “total-pbc/learning-phase-4”. Link to it? [Y/n] y
+✅  Linked to total-pbc/learning-phase-4 (created .vercel)
+❯ vercel env pull .env.development.local
+Vercel CLI 32.5.3
+> Downloading `development` Environment Variables for Project learning-phase-4
+✅  Created .env.development.local file  [157ms]
+```
+
+vercel env pull .env.development.local
+
+これだと動かないので、
+
+vercel env pull .env
+
+がよさそう
