@@ -66,7 +66,7 @@ Int
 String
 
 // Date & time
-// ex)
+// ex) 2023-11-18T01:00:00.000Z
 DateTime
 ```
 
