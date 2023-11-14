@@ -164,6 +164,8 @@ datasource db {
 +}
 ```
 
+Note: save a file | windows: `control + s` | Mac: `command + s` |
+
 Run the following command to create your database.  
 This also creates the `User` and `Pet` tables that are defined in [`prisma/schema.prisma`](../prisma/schema.prisma):
 
