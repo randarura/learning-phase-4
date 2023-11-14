@@ -1,0 +1,16 @@
+## Table of contents
+
+- [`How to setup`](./1-how-to-setup.md)
+  - [`Visual Studio Code`](./1-how-to-setup.md#visual-studio-code)
+- [`Experience API Development Basics #1`](./2-experience-api-development-1.md)
+  - [`Connect to the database`](./2-experience-api-development-1.md#connect-to-the-database)
+    - [`1. Settings for connecting to the database you created`](./2-experience-api-development-1.md#1-settings-for-connecting-to-the-database-you-created)
+    - [`2. The model definitions`](./2-experience-api-development-1.md#2-the-model-definitions)
+    - [`3. Create and seed the database`](./2-experience-api-development-1.md#3-create-and-seed-the-database)
+    - [`4. Check the database`](./2-experience-api-development-1.md#4-check-the-database)
+    - [`5. Check the seed`](./2-experience-api-development-1.md#5-check-the-seed)
+    - [`6. Commit your code to GitHub`](./2-experience-api-development-1.md#6-commit-your-code-to-github)
+- [`Experience API Development Basics #2`](./2-experience-api-development-2.md)
+  - [`API implementations`](./2-experience-api-development-2.md#api-implementations)
+    - [`1. Designing APIs`](./2-experience-api-development-2.md#1-designing-apis)
+    - [`2. GET Method`](./2-experience-api-development-2.md#2-get-method)
