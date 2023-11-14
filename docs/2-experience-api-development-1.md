@@ -174,9 +174,7 @@ npx prisma migrate dev --name init
 When `npx prisma migrate dev` is executed against a newly created database, seeding is also triggered.  
 The seed file in [`prisma/seed.ts`](../prisma/seed.ts) will be executed and your database will be populated with the sample data.
 
-FYI)  
-`--name xxx` is optional.  
-Can be named for clarity.
+Note: `--name xxx` is optional. Can be named for clarity.
 
 **If you succeed**
 
@@ -323,6 +321,8 @@ main()
   })
 ```
 
+Note: More details on the contents later.
+
 For example, change the name of a pet.
 
 ```ts
@@ -401,4 +401,34 @@ Save 1 change button click:
 Wait a bit and it will update.
 ![Prisma Studio](./images/2/6.png)
 
+### 6. Commit your code to GitHub
+
+**Push your code to Github**
+
+Click on Source Control
+![Visual Studio Code](./images/2/7.png)
+
+Click on Stage Changes
+![Visual Studio Code](./images/2/8.png)
+
+Move to Staged Changes
+![Visual Studio Code](./images/2/9.png)
+
+Enter commit message
+Note: Commit message should be easy to understand.
+![Visual Studio Code](./images/2/10.png)
+
+Click Commit button
+![Visual Studio Code](./images/2/11.png)
+
+Click Sync Changes button
+![Visual Studio Code](./images/2/12.png)
+
+Open your GitHub page:
+
+If the committed message is displayed, OK.
+![Visual Studio Code](./images/2/13.png)
+
 Database setup ends here.
+
+Next [`Experience API Development Basics #2`](./2-experience-api-development-2.md)
