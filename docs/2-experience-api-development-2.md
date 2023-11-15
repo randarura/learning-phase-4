@@ -1,4 +1,4 @@
-# Experience API Development Basics #2
+# Experience API Development Basics #2-1
 
 ## API implementations
 
@@ -33,7 +33,7 @@ FYI: [CRUD](https://developer.mozilla.org/docs/Glossary/CRUD)
 | /pets    | Create a new pet | Retrieve all pets              | Bulk update of pets                      | Remove all customers |
 | /pets/1  | Error            | Retrieve the details for pet 1 | Update the details of pet 1 if it exists | Remove pet 1         |
 
-### 2. GET Method - /pets
+### 2. Retrieve all pets
 
 | Resource | GET(Read)         |
 | -------- | ----------------- |
@@ -78,7 +78,9 @@ export async function GET() {
 }
 ```
 
-Note: save a file | windows: `control + s` | Mac: `command + s` |
+| Note: save a file      |                    |
+| ---------------------- | ------------------ |
+| windows: `control + s` | Mac: `command + s` |
 
 Run the development server:
 
@@ -96,6 +98,8 @@ Recommend: [JSONVue](https://chrome.google.com/webstore/detail/jsonvue/chklaanhf
 
 Add the above Chrome extension for better viewing.
 ![Visual Studio Code](./images/2/18.png)
+
+Get all pet records:
 
 ```json
 {
@@ -171,9 +175,9 @@ return Response with pets to json.
 return NextResponse.json({ pets })
 ```
 
-Note: what is JSON?
-JSON is a text-based data format following JavaScript object syntax, which was popularized by Douglas Crockford.  
-Even though it closely resembles JavaScript object literal syntax, it can be used independently from JavaScript, and many programming environments feature the ability to read (parse) and generate JSON.
+| Note: what is JSON?                                                                                                                                                                                                                                                                                                        |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| JSON is a text-based data format following JavaScript object syntax, which was popularized by Douglas Crockford. Even though it closely resembles JavaScript object literal syntax, it can be used independently from JavaScript, and many programming environments feature the ability to read (parse) and generate JSON. |
 
 FYI: [Working with JSON](https://developer.mozilla.org/docs/Learn/JavaScript/Objects/JSON)
 
@@ -291,9 +295,12 @@ const pets = await prisma.pet.findMany({
 })
 ```
 
-Note: `asc` is ascending order, `desc` is decreasing order
+| Note:  |                            |
+| ------ | -------------------------- |
+| `asc`  | `asc` is ascending order   |
+| `desc` | `desc` is decreasing order |
 
-**Exercise**
+### Exercise
 
 Try it in descending order and see what happens.
 
@@ -442,8 +449,218 @@ const pets = await prisma.pet.findMany({
 })
 ```
 
-### 3. GET Method - /pet/:id
+Finally, retrieve only the data you need
+
+`route.ts` so that it looks like this:
+
+```ts
+export async function GET() {
+  const pets = await prisma.pet.findMany({
+    // sort by id ascending
+    orderBy: { id: 'asc' },
+    select: { id: true, name: true, imageUrl: true, owner: { select: { name: true } } },
+  })
+  // return Response with pets to json
+  return NextResponse.json({ pets })
+}
+```
+
+Diff
+
+| Note:                         |
+| ----------------------------- |
+| Some lines have been deleted. |
+
+```diff
+export async function GET() {
+  const pets = await prisma.pet.findMany({
+    // sort by id ascending
+    orderBy: { id: 'asc' },
+-   // include owner data
+-   include: { owner: true },
++   select: { id: true, name: true, imageUrl: true, owner: { select: { name: true } } },
+  })
+  // return Response with pets to json
+  return NextResponse.json({ pets })
+}
+```
+
+Just the data you need.
+
+```json
+{
+  "pets": [
+    {
+      "id": 1,
+      "name": "JIJI",
+      "imageUrl": "https://cdn2.thecatapi.com/images/9u1.jpg",
+      "owner": {
+        "name": "Alice"
+      }
+    },
+    {
+      "id": 2,
+      "name": "MIAO",
+      "imageUrl": "https://cdn2.thecatapi.com/images/716.jpg",
+      "owner": {
+        "name": "Bob2"
+      }
+    },
+    {
+      "id": 3,
+      "name": "SNOW",
+      "imageUrl": "https://cdn2.thecatapi.com/images/wJyw82pIl.jpg",
+      "owner": {
+        "name": "Bob2"
+      }
+    }
+  ]
+}
+```
+
+**Why did you delete it?**
+
+It's a duplication of process, so it's an error.
+
+![Visual Studio Code](./images/2/19.png)
+
+**Explanation of Code**
+
+Specify only the data you need.
+Simplify by not acquiring unnecessary data.
+
+```ts
+const pets = await prisma.pet.findMany({
+  // sort by id ascending
+  orderBy: { id: 'asc' },
+  // select only id, name, imageUrl, and owner.name
+  select: { id: true, name: true, imageUrl: true, owner: { select: { name: true } } },
+})
+```
+
+### Exercise
+
+Try to change it to the data you want.
+
+### 3. Retrieve the details for pet
 
 | Resource | GET(Read)                      |
 | -------- | ------------------------------ |
 | /pet/1   | Retrieve the details for pet 1 |
+
+Add file: [`src/app/api/pets/[id]/route.ts`](../src/app/api/pets/[id]/route.ts)
+
+1. Click pets folder
+2. Click New File...
+3. Enter `[id]/route.ts`
+
+Created file: [`src/app/api/pets/[id]/route.ts`](../src/app/api/pets/[id]/route.ts)
+
+like this:
+
+```bash
+src
+├── app
+│   ├── api
+│   │   └── pets
+│   │       ├── [id]
+│   │       │   └── route.ts
+│   │       └── route.ts
+```
+
+Enter the following code to your `route.ts`:
+
+```ts
+import { NextResponse } from 'next/server'
+
+import prisma from '../../../../../lib/prisma'
+
+// GET /api/pets/:id
+export async function GET(request: Request, { params }: { params: { id: string } }) {
+  // get id from params
+  const id = params.id
+  // findUnique returns a single pet with owner data
+  const pet = await prisma.pet.findUnique({
+    // where id is equal to the id param
+    where: { id: Number(id) },
+    // include owner data
+    include: { owner: true },
+  })
+  // return Response with pets to json
+  return NextResponse.json({ pet })
+}
+```
+
+Open URL: [`http://localhost:3000/api/pets/1`](http://localhost:3000/api/pets/1)
+
+Get the pet record with an id of 1:
+
+```json
+{
+  "pet": {
+    "id": 1,
+    "name": "JIJI",
+    "imageUrl": "https://cdn2.thecatapi.com/images/9u1.jpg",
+    "birthDate": "2022-01-01T00:00:00.000Z",
+    "gender": "Male",
+    "createdAt": "2023-11-12T12:38:04.168Z",
+    "updatedAt": "2023-11-12T12:49:34.264Z",
+    "ownerId": 1,
+    "owner": {
+      "id": 1,
+      "email": "alice@pbc.io",
+      "name": "Alice",
+      "createdAt": "2023-11-12T12:38:04.168Z",
+      "updatedAt": "2023-11-12T12:38:04.168Z"
+    }
+  }
+}
+```
+
+**Explanation of Code**
+
+A Dynamic Segment can be created by wrapping a folder's name in square brackets: `[folderName]`.  
+For example, `[id]` or `[slug]`.
+
+Dynamic Segments are passed as the `params` prop.
+
+A pet could include the following route `app/api/pets/[id]/route.ts` where `[id]` is the Dynamic Segment for pet info.
+
+```ts
+// GET /api/pets/:id
+export async function GET(request: Request, { params }: { params: { id: string } }) {
+  ...
+}
+```
+
+`findMany` to `findUnique` to get only one data
+
+```ts
+// findUnique returns a single pet with owner data
+const pet = await prisma.pet.findUnique({
+  ...
+})
+```
+
+### Exercise
+
+Try to get data by name.
+
+### 4. Summary of GET methods
+
+**`findMany`**
+
+`findMany` returns a list of records.
+
+---
+
+**`findUnique`**
+
+`findUnique` query lets you retrieve a single database record:
+
+- By ID
+- By a unique attribute
+
+---
+
+Next [`Experience API Development Basics #2-3`](./2-experience-api-development-3.md)
