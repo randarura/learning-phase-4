@@ -236,9 +236,9 @@ import prisma from '../../../../lib/prisma'
 // GET /api/pets
 export async function GET() {
   // findMany returns a list of records.
-+  const pets = await prisma.pet.findMany({
-+    orderBy: { id: 'asc' },
-+  })
++ const pets = await prisma.pet.findMany({
++   orderBy: { id: 'asc' },
++ })
   // return Response with pets to json
   return NextResponse.json({ pets })
 }
@@ -624,6 +624,12 @@ For example, `[id]` or `[slug]`.
 
 Dynamic Segments are passed as the `params` prop.
 
+| Route                        | Example URL   | params        |
+| ---------------------------- | ------------- | ------------- |
+| `app/api/pets/[id]/route.ts` | `/api/pets/1` | `{ id: '1' }` |
+| `app/api/pets/[id]/route.ts` | `/api/pets/2` | `{ id: '2' }` |
+| `app/api/pets/[id]/route.ts` | `/api/pets/3` | `{ id: '3' }` |
+
 A pet could include the following route `app/api/pets/[id]/route.ts` where `[id]` is the Dynamic Segment for pet info.
 
 ```ts
@@ -663,4 +669,4 @@ Try to get data by name.
 
 ---
 
-Next [`Experience API Development Basics #2-3`](./2-experience-api-development-3.md)
+Next [`Experience API Development Basics #2-2`](./2-experience-api-development-3.md)
