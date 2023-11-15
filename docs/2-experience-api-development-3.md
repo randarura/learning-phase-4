@@ -322,4 +322,11 @@ Try writing code to create a new user.
 
 Skip for error case.
 
+### 7. Summary of POST methods
+
+**`create`**
+`create` creates a new database record.
+
+---
+
 Next [`Experience API Development Basics #2-3`](./2-experience-api-development-4.md)
