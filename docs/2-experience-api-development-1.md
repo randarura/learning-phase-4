@@ -164,7 +164,9 @@ datasource db {
 +}
 ```
 
-Note: save a file | windows: `control + s` | Mac: `command + s` |
+| Note: save a file      |                    |
+| ---------------------- | ------------------ |
+| windows: `control + s` | Mac: `command + s` |
 
 Run the following command to create your database.  
 This also creates the `User` and `Pet` tables that are defined in [`prisma/schema.prisma`](../prisma/schema.prisma):
@@ -176,7 +178,9 @@ npx prisma migrate dev --name init
 When `npx prisma migrate dev` is executed against a newly created database, seeding is also triggered.  
 The seed file in [`prisma/seed.ts`](../prisma/seed.ts) will be executed and your database will be populated with the sample data.
 
-Note: `--name xxx` is optional. Can be named for clarity.
+| Note:                                               |
+| --------------------------------------------------- |
+| `--name xxx` is optional. Can be named for clarity. |
 
 **If you succeed**
 
@@ -323,7 +327,9 @@ main()
   })
 ```
 
-Note: More details on the contents later.
+| Note:                               |
+| ----------------------------------- |
+| More details on the contents later. |
 
 For example, change the name of a pet.
 
@@ -417,7 +423,11 @@ Move to Staged Changes
 ![Visual Studio Code](./images/2/9.png)
 
 Enter commit message
-Note: Commit message should be easy to understand.
+
+| Note:                                        |
+| -------------------------------------------- |
+| Commit message should be easy to understand. |
+
 ![Visual Studio Code](./images/2/10.png)
 
 Click Commit button
@@ -433,4 +443,4 @@ If the committed message is displayed, OK.
 
 Database setup ends here.
 
-Next [`Experience API Development Basics #2`](./2-experience-api-development-2.md)
+Next [`Experience API Development Basics #2-2`](./2-experience-api-development-2.md)
