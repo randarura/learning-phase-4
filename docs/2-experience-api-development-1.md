@@ -168,9 +168,11 @@ datasource db {
 +}
 ```
 
-| Note: save a file      |                    |
-| ---------------------- | ------------------ |
-| windows: `control + s` | Mac: `command + s` |
+> [!TIP]
+> Save a file
+> | windows | Mac |
+> | ------------- | ------------- |
+> | `control + s` | `command + s` |
 
 Run the following command to create your database.  
 This also creates the `User` and `Pet` tables that are defined in [`prisma/schema.prisma`](../prisma/schema.prisma):
@@ -182,9 +184,8 @@ npx prisma migrate dev --name init
 When `npx prisma migrate dev` is executed against a newly created database, seeding is also triggered.  
 The seed file in [`prisma/seed.ts`](../prisma/seed.ts) will be executed and your database will be populated with the sample data.
 
-| Note:                                               |
-| --------------------------------------------------- |
-| `--name xxx` is optional. Can be named for clarity. |
+> [!NOTE]
+> Options `--name xxx` Can be named for clarity.
 
 **If you succeed**
 
@@ -331,9 +332,8 @@ main()
   })
 ```
 
-| Note:                               |
-| ----------------------------------- |
-| More details on the contents later. |
+> [!NOTE]
+> More details on the contents later.
 
 For example, change the name of a pet.
 
@@ -428,9 +428,8 @@ Move to Staged Changes
 
 Enter commit message
 
-| Note:                                        |
-| -------------------------------------------- |
-| Commit message should be easy to understand. |
+> [!NOTE]
+> Commit message should be easy to understand.
 
 ![Visual Studio Code](./images/2/10.png)
 

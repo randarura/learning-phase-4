@@ -28,10 +28,10 @@ FYI: [CRUD](https://developer.mozilla.org/docs/Glossary/CRUD)
 
 **Define API operations in terms of HTTP methods**
 
-| Resource | POST(Create)     | GET(Read)                      | PUT(Update)                              | DELETE(Delete)       |
-| -------- | ---------------- | ------------------------------ | ---------------------------------------- | -------------------- |
-| /pets    | Create a new pet | Retrieve all pets              | Bulk update of pets                      | Remove all customers |
-| /pets/1  | Error            | Retrieve the details for pet 1 | Update the details of pet 1 if it exists | Remove pet 1         |
+| Resource | POST(Create)     | GET(Read)                      | PUT(Update)                              | DELETE(Delete)  |
+| -------- | ---------------- | ------------------------------ | ---------------------------------------- | --------------- |
+| /pets    | Create a new pet | Retrieve all pets              | Bulk update of pets                      | Remove all pets |
+| /pets/1  | Error            | Retrieve the details for pet 1 | Update the details of pet 1 if it exists | Remove pet 1    |
 
 ### 2. Retrieve all pets
 
@@ -78,9 +78,11 @@ export async function GET() {
 }
 ```
 
-| Note: save a file      |                    |
-| ---------------------- | ------------------ |
-| windows: `control + s` | Mac: `command + s` |
+> [!TIP]
+> Save a file
+> | windows | Mac |
+> | ------------- | ------------- |
+> | `control + s` | `command + s` |
 
 Run the development server:
 
@@ -175,9 +177,9 @@ return Response with pets to json.
 return NextResponse.json({ pets })
 ```
 
-| Note: what is JSON?                                                                                                                                                                                                                                                                                                        |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| JSON is a text-based data format following JavaScript object syntax, which was popularized by Douglas Crockford. Even though it closely resembles JavaScript object literal syntax, it can be used independently from JavaScript, and many programming environments feature the ability to read (parse) and generate JSON. |
+> [!NOTE]
+> what is JSON?  
+> JSON is a text-based data format following JavaScript object syntax, which was popularized by Douglas Crockford. Even though it closely resembles JavaScript object literal syntax, it can be used independently from JavaScript, and many programming environments feature the ability to read (parse) and generate JSON.
 
 FYI: [Working with JSON](https://developer.mozilla.org/docs/Learn/JavaScript/Objects/JSON)
 
@@ -467,9 +469,8 @@ export async function GET() {
 
 Diff
 
-| Note:                         |
-| ----------------------------- |
-| Some lines have been deleted. |
+> [!NOTE]
+> Some lines have been deleted.
 
 ```diff
 export async function GET() {
