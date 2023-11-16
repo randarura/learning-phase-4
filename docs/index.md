@@ -41,3 +41,5 @@
     - [`19. Retrieve the details for pet 1`](./2-experience-api-development-6.md#19-retrieve-the-details-for-pet-1)
 - [`Experience API Development Basics #2-6`](./2-experience-api-development-7.md)
   - [`Deploy to Vercel`](./2-experience-api-development-7.md#deploy-to-vercel)
+  - [`Test and Operation check`](./2-experience-api-development-7.md#test-and-operation-check)
+- [``](./3-experience-front-development-1.md)
