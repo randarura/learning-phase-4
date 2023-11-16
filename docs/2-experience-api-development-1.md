@@ -58,35 +58,39 @@ model Pet {
 
 ```ts
 // number
-// ex) 1, 2, 3
+// ex: 1, 2, 3
 Int
 
 // text
-// ex) kim, kyogoku, imahashi
+// ex: kim, kyogoku, imahashi
 String
 
 // Date & time
-// ex) 2023-11-18T01:00:00.000Z
+// ex: 2023-11-18T01:00:00.000Z
 DateTime
 ```
 
 ```ts
-// autoincrement id ex) 1, 2, 3, ...
-@id @default(autoincrement()
+// auto-incremented primary key
+// ex: 1, 2, 3, ...
+@id @default(autoincrement())
 
-// unique email
+// @unique is a constraint in the database
 @unique
 
-// Register Current Date & Time
+// @default sets a default value in the database
+// ex: Current Date & Time
 @default(now())
 
 // Relationship User
 // Here, "Owner" is used as an item that refers to the User model
+// @relation defines a relation between models
 @relation(fields: [ownerId], references: [id])
 
 // User can have multiple pets
 // pets plural
 // Pet[] array
+// @relation("owner")
 pets Pet[]
 ```
 

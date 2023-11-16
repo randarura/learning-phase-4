@@ -109,7 +109,7 @@ Enter the following code to your `request.http`:
 ```ts
 ###
 
-PUT {{baseUrl}}/pets/ HTTP/1.1
+PUT {{baseUrl}}/pets HTTP/1.1
 Content-Type: application/json
 
 {
@@ -165,6 +165,7 @@ Run PUT Method:
 - Open Respons Tab
 
 ```ts
+Send Request
 PUT {{baseUrl}}/pets/ HTTP/1.1
 Content-Type: application/json
 
@@ -174,6 +175,8 @@ Content-Type: application/json
   }
 }
 ```
+
+Result
 
 ```json
 HTTP/1.1 200 OK
@@ -346,6 +349,7 @@ Run PUT Method:
 - Open Respons Tab
 
 ```ts
+Send Request
 PUT {{baseUrl}}/pets/3 HTTP/1.1
 Content-Type: application/json
 

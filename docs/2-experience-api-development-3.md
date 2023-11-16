@@ -325,6 +325,7 @@ Skip for error case.
 ### 7. Summary of POST methods
 
 **`create`**
+
 `create` creates a new database record.
 
 ---
