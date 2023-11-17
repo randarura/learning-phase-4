@@ -254,5 +254,7 @@ vercel env pull .env
 
 The environment setup is now completed!
 
+Next [`Experience API Development Basics #1`](./2-experience-api-development-1.md)
+
 <!-- WANT: どこかでVS Codeの拡張を入れるのもやっておきたい
 extensions.json に指定しているもの -->

@@ -2,6 +2,10 @@
 
 - [`How to setup`](./1-how-to-setup.md)
   - [`Visual Studio Code`](./1-how-to-setup.md#visual-studio-code)
+  - [`Node.js`](./1-how-to-setup.md#nodejs)
+  - [`Git`](./1-how-to-setup.md#git)
+  - [`GitHub`](./1-how-to-setup.md#github)
+  - [`Vercel`](./1-how-to-setup.md#vercel)
 - [`Experience API Development Basics #1`](./2-experience-api-development-1.md)
   - [`Connect to the database`](./2-experience-api-development-1.md#connect-to-the-database)
     - [`1. Settings for connecting to the database you created`](./2-experience-api-development-1.md#1-settings-for-connecting-to-the-database-you-created)
