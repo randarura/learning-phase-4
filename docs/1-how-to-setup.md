@@ -112,9 +112,11 @@ After account creation, open the following URL
 [https://github.com/GuildWorks/learning-phase-4](https://github.com/GuildWorks/learning-phase-4)
 
 Click `Fork` Button.
+
 ![Fork](images/2023-11-17-07-53-05.png)
 
 Click `Create Fork` Button.
+
 ![Create Fork](images/2023-11-17-08-25-16.png)
 
 Click `< > Code` Button and copy url for cloning.
@@ -143,6 +145,7 @@ npm run dev
 ```
 
 If you see Windows Security Alert, Click `Allow access`.
+
 ![Windows Security Alert](images/2023-11-17-08-48-59.png)
 
 Open [http://localhost:3000](http://localhost:3000).
@@ -169,9 +172,11 @@ Click `Install`button.
 ![](images/2023-11-17-09-11-04.png)
 
 Click `Import` button.
+
 ![](images/2023-11-17-09-11-40.png)
 
 Click `Deploy` button.
+
 ![](images/2023-11-17-09-12-38.png)
 
 Wait untill the deployment is complete and open Conguratulations page, then click `Continue to Dashboard` button.
@@ -223,12 +228,15 @@ vercel link
 ![](images/2023-11-17-09-53-56.png)
 
 Vercel CLI Login succeeded. Back to terminal.
+
 ![](images/2023-11-17-09-54-25.png)
 
 When you are asked `Set up “~\learning-phase-4”?`, type `Y` and press Enter key.
+
 ![](images/2023-11-17-09-56-40.png)
 
 When you are asked `Which scope should contain your project?`, press Enter key.
+
 ![](images/2023-11-17-09-56-58.png)
 
 When you are asked `Found project “<Your name>s-projects/learning-phase-4”. Link to it?`, type `Y` and press Enter key.
