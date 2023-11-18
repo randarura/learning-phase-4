@@ -12,7 +12,7 @@ async function main() {
       name: 'Alice',
       pets: {
         create: {
-          name: 'JIJI',
+          name: 'GIGI',
           imageUrl: 'https://cdn2.thecatapi.com/images/9u1.jpg',
           birthDate: new Date('2022-01-01'),
           gender: 'Male',
@@ -29,13 +29,13 @@ async function main() {
       pets: {
         create: [
           {
-            name: 'MIAO',
+            name: 'NEKO',
             imageUrl: 'https://cdn2.thecatapi.com/images/716.jpg',
             birthDate: new Date('2023-10-01'),
             gender: 'Male',
           },
           {
-            name: 'SNOW',
+            name: 'INU',
             imageUrl: 'https://cdn2.thecatapi.com/images/wJyw82pIl.jpg',
             birthDate: new Date('2021-05-11'),
             gender: 'Female',
