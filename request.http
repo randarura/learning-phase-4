@@ -53,3 +53,13 @@ export async function DELETE(request: Request, { params }: { params: { id: strin
 
 DELETE {{baseUrl}}/pets/2 HTTP/1.1
 Content-Type: application/json
+
+POST {{baseUrl}}/pets/1/weights HTTP/1.1
+Content-Type: application/json
+
+{
+  "weight": {
+    "weight": 10.0,
+    "petId": 1
+  }
+}
